@@ -6,7 +6,7 @@ from teams.models import TeamRoster
 
 class HackerInfo(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name="hacker")
-    team = models.ForeignKey(TeamRoster, on_delete=models.CASCADE)
+    team = models.ForeignKey(TeamRoster, null=True, on_delete=models.CASCADE)
 
     class Meta():
         verbose_name = 'Hacker'
