@@ -54,4 +54,11 @@ class TeamsRosterTest(TestCase):
 
         self.assertFalse(find_test_team, False)
 
-    
+    # I tried to write a test that would test to see if an error was raised to test the one to one relationship between team and hacker
+    # def test_team_leader_uniqueness(self):
+    #     test_team_1 = self.create_team()
+    #     user_leader = test_team_1.leader
+    #     with self.assertRaises(RuntimeError) as ue:
+    #         test_team_2 = TeamRoster.objects.create(name='kyoto-jujutsu-tech', description='second years at jujutsu sorcery tech', leader=user_leader,is_visible=False)
+
+    #     self.assertEqual(str(ue.exception), 'UNIQUE constraint failed')
