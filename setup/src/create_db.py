@@ -16,6 +16,7 @@ from default.models import CustomUser
 from organizer.models import OrganizerInfo, WebsiteSettings, FeaturePermission, OrganizerPermission
 from hacker.models import HackerInfo
 from default.helper import add_group
+from teams.models import TeamRoster
 
 load_dotenv()
 
@@ -215,6 +216,17 @@ shirt_sizes_hackers = [
 
 ]
 
+team_names = [
+    ('avengers', 'avengers assemble!!!'),
+   ( 'leaf village', ' we live in the shadows'),
+    ('brooklyn nine-nine', 'NINE NINE!!'),
+]
+
+team_leaders = [
+    'tony@mit.edu',
+    'amy@b99.gov',
+    'ray@b99.gov',
+]
 # Create the necessary groups for the users
 
 
@@ -229,6 +241,10 @@ def create_super_user():
     new_admin=CustomUser.objects.create_superuser(email=os.getenv('HEAD_ORG_EMAIL'), password=os.getenv('HEAD_ORG_PASSWORD'))
     new_admin.first_name=os.getenv('HEAD_ORG_FIRST_NAME')
     new_admin.last_name=os.getenv('HEAD_ORG_LAST_NAME')
+
+def create_teams():
+    for i in range(len(team_names)):
+        new_team = TeamRoster.objects.create(name=team_names[i][0], description=team_names[i][1], leader=CustomUser.objects.get(email=team_leaders[i]), is_visible=True)
 
 
 def create_users():
@@ -319,7 +335,6 @@ def add_organizers_to_features():
 create_groups()
 create_super_user()
 create_users()
-
 # admin startup code
 '''
 NOTE: Please run create_feature_permissions() together with add_organizers_to_features()
@@ -328,3 +343,5 @@ add_admin_to_group()
 add_website_setting()
 create_feature_permissions()
 add_organizers_to_features()
+
+create_teams()
