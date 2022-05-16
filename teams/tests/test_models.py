@@ -27,7 +27,7 @@ class TeamsRosterTest(TestCase):
         user_leader = CustomUser.objects.create(email='limitless@tokyo-jujutsu.jp', first_name='gojo', last_name='satoru')
         hacker_leader = HackerInfo.objects.create(user=user_leader)
 
-        if is_in_team(user_leader):
+        if not is_in_team(user_leader):
             team = TeamRoster.objects.create(name='tokyo-jujutsu-tech', description='first years at jujutsu sorcery tech', leader=user_leader,is_visible=False)
             add_member(user_leader, team)
         
@@ -40,7 +40,7 @@ class TeamsRosterTest(TestCase):
         new_user = CustomUser.objects.create(email='sukuna@jujutsu-tech.jp', first_name='yuuji', last_name='itadori')
         hacker = HackerInfo.objects.create(user=new_user)
 
-        if is_in_team(new_user):
+        if not is_in_team(new_user):
             add_member(new_user, test_team)
 
         self.assertTrue(is_in_team(new_user), True)
@@ -142,10 +142,12 @@ class TestTeamBuilding(TestCase):
 
         for member, team_name in self.fixture_data:
             with self.subTest(context=member):
+
                 hacker = HackerInfo.objects.get(user__email=member)
                 team_obj = TeamRoster.objects.get(name=team_name)
-                hacker.team = team_obj
-                hacker.save()
 
-                check_hacker_team = HackerInfo.objects.get(user__email=member)
-                self.assertEqual(check_hacker_team.team.name, team_name)
+                if not is_in_team(hacker.user):
+                    add_member(hacker.user, team_obj)
+
+                # check_hacker_team = HackerInfo.objects.get(user__email=member)
+                self.assertTrue(is_in_team(hacker.user), True)
