@@ -6,7 +6,7 @@ from default.models import CustomUser
 class TeamRoster(models.Model):
     name = models.CharField(max_length=120, blank=False, null=False)
     description = models.CharField(max_length=180, blank=False, null=False)
-    leader = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name='user')
+    leader = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
     is_visible = models.BooleanField()
 
     def __str__(self):
