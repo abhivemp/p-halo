@@ -10,6 +10,15 @@ Display public teams if the user is not in a team.
 If the user is in a team, show the user's team info page
 """
 def team_dash(request):
+    current_hacker = HackerInfo.objects.get(user=request.user)
+    team_status = is_in_team(request.user)
 
-    context = {}
+    if not is_in_team(request.user):
+        public_teams = TeamRoster.objects.filter(is_visible=True)
+        print(public_teams)
+        context = {'teams': public_teams}
+    else:
+        context = {}
+
+    context.update({'team_status': team_status})
     return render(request, 'teams/team-dash.html', context)

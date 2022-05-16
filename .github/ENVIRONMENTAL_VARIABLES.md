@@ -22,6 +22,8 @@ HEAD_ORG_FIRST_NAME='FIRST'
 HEAD_ORG_LAST_NAME='LAST'
 HEAD_ORG_EMAIL='mailer@mail.com'
 HEAD_ORG_PASSWORD='PASSWORD'
+
+HACKER_PASSWORD='PASSWORD'
 ```
 
 ## sendgrid.env in base directory

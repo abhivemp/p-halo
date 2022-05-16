@@ -1,7 +1,29 @@
 {% extends 'hackers/base.html' %}
 
 {% block content %}
-  <body>
-    Yay baby
-  </body>
+    <br>
+    <body>
+        <h1 id="public-header"> Public Teams </h1>
+
+        {% if not team_status %}
+
+            {% for t in teams %}
+                <div class="card">
+                    <div class="card-header">
+                        Team
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ t.name }}</h5>
+                        <p class="card-text">
+                            About: {{ t.description }}
+                        </p>
+                        <p class="card-text">
+                            <strong>Lead: {{ t.leader.first_name }} {{ t.leader.last_name }}</strong>
+                        </p>
+                    </div>
+                </div>
+                <br>
+            {% endfor %}
+        {% endif %}
+    </body>
 {% endblock %}

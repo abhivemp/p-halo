@@ -244,8 +244,10 @@ def create_super_user():
 
 def create_teams():
     for i in range(len(team_names)):
-        new_team = TeamRoster.objects.create(name=team_names[i][0], description=team_names[i][1], leader=CustomUser.objects.get(email=team_leaders[i]), is_visible=True)
-
+        lead = CustomUser.objects.get(email=team_leaders[i])
+        new_team = TeamRoster.objects.create(name=team_names[i][0], description=team_names[i][1], leader=lead, is_visible=True)
+        lead.team = new_team
+        lead.save()
 
 def create_users():
     for i in range(TOTAL_ORGANIZERS):
