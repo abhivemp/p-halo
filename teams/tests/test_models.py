@@ -46,3 +46,12 @@ class TeamsRosterTest(TestCase):
         self.assertTrue(is_in_team(new_user), True)
     
      
+    def test_team_deletion(self):
+        test_team = self.create_team()
+        test_team_name = test_team.name
+        test_team.delete()
+        find_test_team = TeamRoster.objects.filter(name=test_team_name).exists()
+
+        self.assertFalse(find_test_team, False)
+
+    
