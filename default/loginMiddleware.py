@@ -52,6 +52,7 @@ view every page in their module.
 
 hacker_mods = {
     "hacker.views",
+    "teams.views",
 }
 organizer_mods = {
     "organizer.views",
