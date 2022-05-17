@@ -23,7 +23,7 @@ HEAD_ORG_LAST_NAME='LAST'
 HEAD_ORG_EMAIL='mailer@mail.com'
 HEAD_ORG_PASSWORD='PASSWORD'
 
-HACKER_PASSWORD='PASSWORD'
+HACKER_PASSWORD='randompass'
 ```
 
 ## sendgrid.env in base directory
