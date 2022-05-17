@@ -15,8 +15,8 @@ def team_dash(request):
 
     if not is_in_team(request.user):
         public_teams = TeamRoster.objects.filter(is_visible=True)
-        print(public_teams)
-        context = {'teams': public_teams}
+        count_public_teams = public_teams.count()
+        context = {'teams': public_teams, 'team_count': count_public_teams}
     else:
         context = {}
 

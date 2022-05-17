@@ -3,8 +3,8 @@
 {% block content %}
     <br>
     <body>
-        <h1 id="public-header"> Public Teams </h1>
-
+        <h1 > Public Teams </h1>
+        <h2 id="team-count"> {{ team_count }} teams </h1>
         {% if not team_status %}
 
             {% for t in teams %}

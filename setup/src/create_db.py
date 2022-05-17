@@ -88,10 +88,10 @@ address_volunteers = [
 
 
 first_name_hackers = [
-    'Sophie',
-    'Daryll',
-    'Chandler',
-    'Rachel',
+    'Megumi',
+    'Aoi',
+    'Yuta',
+    'Yuji',
     'Tony',
     'Jake',
     'Amy',
@@ -102,10 +102,10 @@ first_name_hackers = [
 ]
 
 last_name_hackers = [
-    'Goldberg',
-    'Johnson',
-    'Bing',
-    'Green',
+    'Fushiguro',
+    'Todo',
+    'Otsusuki',
+    'Itadori',
     'Stark',
     'Peralta',
     'Santiago',
@@ -115,10 +115,10 @@ last_name_hackers = [
     'Kim'
 ]
 email_hackers = [
-    'sophie@tcnj.edu',
-    'daryl@dm.com',
-    'chandler@ps.com',
-    'rachel@rl.com',
+    'fushiguro@jujutsutech.jp',
+    'aoi@jujutsutech.jp',
+    'yuta@jujutsutech.jp',
+    'yuji@jujutsutech.jp',
     'tony@mit.edu',
     'jake@b99.gov',
     'amy@b99.gov',
@@ -217,15 +217,15 @@ shirt_sizes_hackers = [
 ]
 
 team_names = [
-    ('avengers', 'avengers assemble!!!'),
-   ( 'leaf village', ' we live in the shadows'),
-    ('brooklyn nine-nine', 'NINE NINE!!'),
+    ('Tokyo', 'jujutsu sorcerey team from tokyo'),
+   ( 'Kyoto', ' jujutsu sorcery team from kyoto'),
+    ('Special-Grade', 'Built Different!!'),
 ]
 
 team_leaders = [
-    'tony@mit.edu',
-    'amy@b99.gov',
-    'ray@b99.gov',
+    'fushiguro@jujutsutech.jp',
+    'aoi@jujutsutech.jp',
+    'yuta@jujutsutech.jp',
 ]
 # Create the necessary groups for the users
 
