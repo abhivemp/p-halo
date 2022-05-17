@@ -60,6 +60,8 @@ HALO is a web application that gives alleviates hackathon operations. From handl
 
 Python 3.9.10
 
+If you are using a different python version (should be >= 3.7), delete the `Pipfile` and `Pipfile.lock` and run `pipenv install -r requirements.txt`
+
 
 
 ## Getting Started
@@ -95,7 +97,7 @@ The project uses multiple .env variables and unfortunately couldn't be compiled 
 4. Create the `pipenv` environment
 
    ```shell
-   pipenv install
+   pipenv install -r requirements.txt
    ```
 
    Once you install the pipenv environment, you can activate it by doing:
